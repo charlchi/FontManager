@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "UI: Select Font",
+        "command": "font_manager",
+    },
+]
