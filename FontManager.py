@@ -5,14 +5,6 @@ import platform
 
 from .fontmanager.WinFont import (get_windows_fonts)
 
-print(0 << 4)
-print(1 << 4)
-print(2 << 4)
-print(3 << 4)
-print(4 << 4)
-print(5 << 4)
-
-
 class FontManagerCommand(sublime_plugin.WindowCommand):
 	
 	PREFS_FILE = 'Preferences.sublime-settings'
