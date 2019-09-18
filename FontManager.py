@@ -3,7 +3,12 @@ import sublime_plugin
 import ctypes
 import platform
 
-from .fontmanager.WinFont import (get_windows_fonts)
+HOST_OS = platform.system()
+
+if HOST_OS == "Windows":
+	from .fontmanager.WinFont import (get_fonts)
+else:
+	from .fontmanager.UnixFont import (get_fonts)
 
 class FontManagerCommand(sublime_plugin.WindowCommand):
 	
@@ -16,10 +21,7 @@ class FontManagerCommand(sublime_plugin.WindowCommand):
 	def run(self):
 
 		self.prefs = sublime.load_settings(self.PREFS_FILE)
-		if platform.system() == "Windows":
-			self.fonts = get_windows_fonts()
-		else:
-			self.fonts = []
+		self.fonts = get_fonts()
 
 		self.current = -1
 		initial_highlight = -1

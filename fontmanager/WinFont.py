@@ -53,7 +53,7 @@ def handle_font_func(font, phys_font, type, param):
 	windowsFontList.append(font.lfFaceName.decode('ascii'))
 	return 1
 
-def get_windows_fonts():
+def get_fonts():
 
 	windowsFontList.clear()
 
